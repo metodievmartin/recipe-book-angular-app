@@ -12,8 +12,8 @@ export class RecipeService {
         new Recipe(
             'Tasty Schnitzel',
             'A super tasty schnitzel - just awesome',
-            'https://www.curiouscuisiniere.com/wp-content/uploads/2060/09/German-Pork-Schnitzel-9121-1200-720x405.jpg'
-            ,[new Ingredient('Meat', 1), new Ingredient('Chips', 20)]
+            'https://www.curiouscuisiniere.com/wp-content/uploads/2060/09/German-Pork-Schnitzel-9121-1200-720x405.jpg',
+            [new Ingredient('Meat', 1), new Ingredient('Chips', 20)]
         ),
         new Recipe(
             'Big Fat Burger',
@@ -28,6 +28,10 @@ export class RecipeService {
 
     getRecipes() {
         return this.recipes.slice();
+    }
+
+    getRecipeById(id: number): Recipe {
+        return this.recipes[id];
     }
 
     addIngredientsToShoppingList(ingredients: Ingredient[]) {
