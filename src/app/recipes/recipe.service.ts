@@ -8,7 +8,7 @@ import { ShoppingListService } from '../shopping-list/shopping-list.service';
 @Injectable()
 export class RecipeService {
     recipesChanged = new Subject<Recipe[]>();
-    private recipes: Recipe[] = [
+    private recipes: Recipe[]; /*= [
         new Recipe(
             'Tasty Schnitzel',
             'A super tasty schnitzel - just awesome',
@@ -21,7 +21,7 @@ export class RecipeService {
             'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/RedDot_Burger.jpg/1200px-RedDot_Burger.jpg',
             [new Ingredient('Meat', 1), new Ingredient('Buns', 2)]
         )
-    ];
+    ];*/
 
     constructor(private slService: ShoppingListService) {
     }
@@ -32,6 +32,9 @@ export class RecipeService {
     }
 
     getRecipes(): Recipe[] {
+        if (!this.recipes) {
+            return [];
+        }
         return this.recipes.slice();
     }
 
