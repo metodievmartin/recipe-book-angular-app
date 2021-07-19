@@ -55,4 +55,8 @@ export class AuthComponent {
 
         form.reset();
     }
+
+    onCloseModal() {
+        this.error = null;
+    }
 }
