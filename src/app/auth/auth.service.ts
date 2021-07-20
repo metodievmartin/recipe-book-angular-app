@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { catchError, tap } from 'rxjs/operators';
-import { BehaviorSubject, throwError } from 'rxjs';
-import { User } from './user.model';
 import { Router } from '@angular/router';
+import { BehaviorSubject, throwError } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
+
+import { User } from './user.model';
 
 export interface AuthResponseData {
     kind: string,
@@ -15,9 +16,7 @@ export interface AuthResponseData {
     registered?: boolean
 }
 
-@Injectable({
-    providedIn: 'root'
-})
+@Injectable()
 export class AuthService {
     private API_KEY = 'AIzaSyBg_PZ14K5toJkmcgMmbO5ck8QKsrQUvq8';
     private SIGN_IN_AUTH_ENDPOINT = `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=${this.API_KEY}`;
