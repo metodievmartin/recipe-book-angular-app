@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 import { ShoppingListComponent } from './shopping-list.component';
@@ -14,7 +13,6 @@ import { ShoppingListRoutingModule } from './shopping-list-routing.module';
     ],
     imports: [
         SharedModule,
-        RouterModule,
         FormsModule,
         ShoppingListRoutingModule
     ]

@@ -22,7 +22,6 @@ import { RecipesRoutingModule } from './recipes-routing.module';
     ],
     imports: [
         SharedModule,
-        RouterModule,
         RecipesRoutingModule,
         ReactiveFormsModule
     ]
