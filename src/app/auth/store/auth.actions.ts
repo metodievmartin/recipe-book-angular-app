@@ -3,8 +3,8 @@ import { Action } from '@ngrx/store';
 export const SIGNUP_START = '[Auth] Signup Start';
 export const LOGIN_START = '[Auth] Login Start';
 export const AUTO_LOGIN = '[Auth] Autologin';
-export const AUTHENTICATE_SUCCESS = '[Auth] Authenticate Success';
-export const AUTHENTICATE_FAIL = '[Auth] Authenticate Fail';
+export const AUTHENTICATE_SUCCESS = '[Auth API] Authenticate Success';
+export const AUTHENTICATE_FAIL = '[Auth API] Authenticate Fail';
 export const LOGOUT = '[Auth] Logout';
 export const CLEAR_ERROR = '[Auth] Clear Error';
 
@@ -36,17 +36,16 @@ export class AuthenticateSuccess implements Action {
             email: string;
             userId: string
             token: string,
-            expirationDate: Date
+            expirationDate: Date,
+            redirect: boolean
         }
-    ) {
-    }
+    ) {}
 }
 
 export class AuthenticateFail implements Action {
     readonly type = AUTHENTICATE_FAIL;
 
-    constructor(public payload: string) {
-    }
+    constructor(public payload: string) {}
 }
 
 export class Logout implements Action {

@@ -15,7 +15,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
     ingredients: Observable<{ ingredients: Ingredient[] }>;
 
     constructor(
-        private store: Store<fromApp.IAppState>
+        private store: Store<fromApp.AppState>
     ) {
     }
 

@@ -13,7 +13,7 @@ export class AuthGuard implements CanActivate {
     constructor(
         private authService: AuthService,
         private router: Router,
-        private store: Store<fromApp.IAppState>
+        private store: Store<fromApp.AppState>
     ) {
     }
 

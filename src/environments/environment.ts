@@ -6,7 +6,8 @@ export const environment = {
     production: false,
     apiKey: 'AIzaSyBg_PZ14K5toJkmcgMmbO5ck8QKsrQUvq8',
     signInEndpoint: `https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=`,
-    logInEndpoint: 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key='
+    logInEndpoint: 'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=',
+    getRecipesEndpoint: 'https://recipe-book-e0fb0-default-rtdb.firebaseio.com/recipes.json'
 };
 
 /*
