@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Store } from '@ngrx/store';
+import { map, tap } from 'rxjs/operators';
 
 import { RecipeService } from '../recipes/recipe.service';
 import { Recipe } from '../recipes/recipe.model';
-import { map, tap } from 'rxjs/operators';
-import { AuthService } from '../auth/auth.service';
+import * as fromApp from '../store/app.reducer';
+import * as RecipesAction from '../recipes/store/recipes.actions';
 
 const RECIPES_URL: string = 'https://recipe-book-e0fb0-default-rtdb.firebaseio.com/recipes.json';
 
@@ -14,7 +16,7 @@ export class DataStorageService {
     constructor(
         private http: HttpClient,
         private recipesService: RecipeService,
-        private authService: AuthService
+        private store: Store<fromApp.AppState>
     ) {
     }
 
@@ -38,7 +40,8 @@ export class DataStorageService {
                     })
                 }),
                 tap(recipes => {
-                    this.recipesService.setRecipes(recipes)
+                    // this.recipesService.setRecipes(recipes)
+                    this.store.dispatch(new RecipesAction.SetRecipes(recipes))
                 })
             );
     }
