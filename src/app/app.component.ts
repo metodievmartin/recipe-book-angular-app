@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from './auth/auth.service';
 import { Store } from '@ngrx/store';
+
 import * as fromApp from './store/app.reducer';
 import * as AuthActions from './auth/store/auth.actions';
 
@@ -13,7 +13,6 @@ export class AppComponent implements OnInit {
     title = 'recipe-book';
 
     constructor(
-        private authService: AuthService,
         private store: Store<fromApp.AppState>
     ) {}
 
